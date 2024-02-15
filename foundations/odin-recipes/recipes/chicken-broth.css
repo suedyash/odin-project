@@ -179,3 +179,110 @@ h2 {
 #page-end {
     margin: 44px;
 }
+
+/*
+ * Styles for screens with a maximum width of 600px - mobile *
+*/
+@media (max-width: 500px) {
+    body {
+        font-size: 1rem;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #recipe-desc {
+        color: var(--rosewater);
+        font-size: 1rem;
+    }
+
+    #recipe-summary {
+        border: 1px;
+        border-style: solid;
+        border-color: var(--rosewater);
+        font-size: 1.1rem;
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+    #recipe-summary-items {
+        color: var(--lavender);
+        gap: 10px;
+    }
+    .divider {
+        background-color: var(--text);
+        opacity: 33%;
+        width: 300px;
+        height: 1px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .divider-2-top {
+        display: block;
+        background-color: var(--text);
+        opacity: 33%;
+        width: 250px;
+        height: 1px;
+        margin-bottom: -10px;
+    }
+    .divider-2-bottom {
+        display: block;
+        background-color: var(--text);
+        opacity: 33%;
+        width: 250px;
+        height: 1px;
+        margin-top: -10px;
+    }
+
+    h2 {
+        color: var(--rosewater);
+    }
+    #recipe-ingredients {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    #recipe-directions {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 300px;
+        height: auto;
+        margin-bottom: 24px;
+    }
+    .steps-header {
+        display: block;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 1.2rem;
+    }
+    #chicken-1 {
+        border: 2px;
+        border-color: var(--rosewater);
+        align-self: center;
+        margin-top: 24px;
+        border-style: inset;
+        padding: 2px;
+        width: 300px;
+    }
+
+    #nutritional-facts {
+        border: 1px;
+        border-style: solid;
+        border-color: var(--rosewater);
+        font-size: 1.2rem;
+        padding: 12px;
+        margin-top: 24px;
+    }
+    #nutritional-facts-header {
+        font-size: 1.6rem;
+    }
+    #nutritional-facts-items {
+        color: var(--lavender);
+        gap: 10px;
+    }
+
+    #page-end {
+        margin: 40px;
+    }
+}
