@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'EB Garamond';
+    src: url(../metadata/EBGaramond-Regular.ttf);
+}
+@font-face {
+    font-family: 'Jet Brains Mono';
+    src: url(../metadata/JetBrainsMono-Regular.ttf);
+}
+
+:root {
+    --mantle: #181825;
+    --crust: #11111b;
+    --rosewater: #f5e0dc;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --teal: #94e2d5;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --yellow: #f9e2af;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+    font-family: 'EB Garamond';
+    color: var(--text);
+    background-color: var(--mantle);
+    font-size: 1.1rem;
+}
+
+#body-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+h1 {
+    color: var(--rosewater);
+}
+
+a:link {
+    color: var(--maroon);
+}
+a:visited {
+    color: var(--mauve);
+}
+a:hover {
+    color: var(--lavender);
+}
+
+#recipe-desc {
+    color: var(--rosewater);
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+#recipe-summary {
+    display: inline-block;
+    text-align: center;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--rosewater);
+    font-size: 1.3rem;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+#recipe-summary-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--lavender);
+    gap: 20px;
+}
+.divider {
+    display: block;
+    background-color: var(--text);
+    opacity: 33%;
+    width: 500px;
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.divider-2-top {
+    display: block;
+    background-color: var(--text);
+    opacity: 33%;
+    width: 250px;
+    height: 1px;
+    margin-bottom: -10px;
+}
+.divider-2-bottom {
+    display: block;
+    background-color: var(--text);
+    opacity: 33%;
+    width: 250px;
+    height: 1px;
+    margin-top: -10px;
+}
+
+h2 {
+    color: var(--rosewater);
+}
+#recipe-ingredients {
+    display: block;
+    margin-bottom: 24px;
+}
+
+#recipe-directions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 500px;
+    height: auto;
+    margin-bottom: 24px;
+}
+.steps-header {
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+#chicken-1 {
+    border: 1px;
+    border-color: var(--rosewater);
+    border-style: solid;
+    padding: 5px;
+    align-self: center;
+    margin-top: 24px;
+}
+.img-subtext {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 6px;
+}
+
+#nutritional-facts {
+    display: inline-block;
+    text-align: center;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--rosewater);
+    font-size: 1.2rem;
+    padding: 24px;
+    margin-top: 24px;
+}
+#nutritional-facts-header-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+#nutritional-facts-header {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+#nutritional-facts-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--lavender);
+    gap: 20px;
+}
+
+#page-end {
+    margin: 44px;
+}
