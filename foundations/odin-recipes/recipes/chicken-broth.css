@@ -181,7 +181,7 @@ h2 {
 }
 
 /*
- * Styles for screens with a maximum width of 600px - mobile *
+ * Styles for screens with a maximum width of 500px - mobile *
 */
 @media (max-width: 500px) {
     body {
