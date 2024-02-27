@@ -53,7 +53,7 @@ body {
 */
 
 section {
-    padding: 0px 0px;
+    padding: 5px 5px;
     z-index: -1;
 }
 
@@ -65,7 +65,6 @@ section {
     width: 100%;
     height: auto;
     background-color: var(--shade4);
-    color: #fff;
     display: flex;
     flex-direction: column;
 }
@@ -124,15 +123,12 @@ header {
     color: var(--shade5);
 }
 
-
 .image-overlay-content {
     position:absolute;
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%);
 }
-
-
 
 #section-1-background {
     width: 100%;
@@ -141,7 +137,44 @@ header {
     flex-direction: column;
     align-self: center;
 }
-
+#main-container {
+  background-color: #181825;
+  opacity: 0.8;
+  padding: 10px 40px;
+}
+#main-text {
+  display: flex;
+  flex-direction: column;
+}
+#main-text h1{
+  color: var(--shade2);
+}
+#main-text p {
+  color: var(--shade1);
+}
+#main-text button {
+  margin-left: auto;
+}
+.sign-up {
+  font-family: 'Geist';
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 14px;
+  background-color: var(--mantle);
+  color: var(--shade1);
+  border: 2px solid var(--shade1);
+  border-radius: 4px;
+  width: 100px;
+  height: 32px;
+  z-index: 100;
+  cursor: pointer;
+}
+.sign-up:hover {
+  background-color: var(--shade1);
+  color: var(--mantle);
+  border: 0px solid var(--mantle);
+  border-radius: 4px;
+}
 
 
 /*
