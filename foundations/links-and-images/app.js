@@ -7,3 +7,10 @@ function displaySum() {
 }
 
 document.getElementById('sumButton').addEventListener("click", displaySum);
+
+const testButton = document.getElementById('test-button');
+testButton.addEventListener("click", updateName);
+function updateName() {
+  const playerName = prompt("Enter your name...");
+  testButton.textContent = `player 1: ${playerName}`;
+}
