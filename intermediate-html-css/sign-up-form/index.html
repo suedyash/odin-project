@@ -13,41 +13,57 @@
     <div id="logo-container" style="z-index: 12;">
     
     </div>
-    <span class="creditImage" style="z-index: 8;">Photo by <span class="creditName">Name Surname</span> on <span class="creditLink">Unplash</span></span>
+    <span class="creditImage" style="z-index: 8;">Photo by <span id="back-cred-artist" class="creditName">Name Surname</span> on <span id="back-cred-link" class="creditLink">Unplash</span></span>
   </div>
   
-  <main style="z-index: 6;">
-    <span class="info">
-      This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.
-    </span>
-    <span class="info">
-      Sign up <span class="attention">now</span> to get started.
-    </span>
-    <span class="info">
-      You <span class="attention">know</span> you want to.
-    </span>
+  <main class="background-blur backdrop-shadow" style="z-index: 6;">
+
+    <div style="display: flex; flex-direction: column; gap: 4px; margin-left: 16px;">
+      <span class="info">
+        This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.
+      </span>
+      <span class="info">
+        Sign up <span class="accent">now</span> to get started.
+      </span>
+      <span class="info">
+        You <span class="accent">know</span> you want to.
+      </span>
+    </div>
 
     <div id="form-container">
       <span class="info">Let's do this!</span>
       <form>
-        <label for="first_name">First Name...</label>
-        <input type="text" id="first_name" name="first_name">
-        <label for="last_name">Last Name...</label>
-        <input type="text" id="last_name" name="last_name">
-        <label for="email">Email...</label>
-        <input type="email" id="email" name="email"> 
-        <label for="phone">Phone Number...</label>
-        <input type="number" id="phone" name="phone"> 
-        <label for="password">Password...</label>
-        <input type="password" id="password" name="password">
-        <label for="confirm_pass">Confirm Password...</label>
-        <input type="password" id="confirm_pass" name="confirm_pass">
+        <div>
+          <label for="first_name">First Name...</label>
+          <input type="text" id="first_name" name="first_name">
+        </div>
+        <div>
+          <label for="last_name">Last Name...</label>
+          <input type="text" id="last_name" name="last_name">
+        </div>
+        <div>
+          <label for="email">Email...</label>
+          <input type="email" id="email" name="email"> 
+        </div>
+        <div>
+          <label for="phone">Phone Number...</label>
+          <input type="number" id="phone" name="phone">
+        </div>
+        <div>
+          <label for="password">Password...</label>
+          <input type="password" id="password" name="password">
+        </div>
+        <div>
+          <label for="confirm_pass">Confirm Password...</label>
+          <input type="password" id="confirm_pass" name="confirm_pass">
+        </div>
       </form>
     </div>
 
     <button id="create-acc">Create Account</button>
-    <span class="sub-info">Already have an account? <span class="attention">Log In</span></span>
+    <span id="create-acc-sub" class="sub-info">Already have an account? <span class="accent">Log In</span></span>
   </main>
 
+  <script src="./app.js"></script>
 </body>
 </html>
