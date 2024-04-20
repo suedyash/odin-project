@@ -1,0 +1,48 @@
+/* color scheme */
+:root {
+  --base: ;
+  --text: ;
+  --accent: ;
+  --attention: ;
+}
+
+body {
+  position: absolute;
+  background-color: black;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px
+}
+
+#backdrop {
+  position: fixed;
+  display: block;
+  left: -1px;
+  top: -1px;
+  width: auto;
+  height: 101vh;
+  background-image: url('./metadata/mos-design-ild0babk0Q0-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#beauty-container {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+main {
+  grid-area: 1 / 2 / 2 / 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  color: var(--text);
+}
+
+.attention {
+  color: var(--attention);
+}
