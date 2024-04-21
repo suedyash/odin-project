@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'space';
+  src: url(./metadata/SpaceMonoNerdFontMono-Regular.ttf);
+}
+@font-face {
+  font-family: 'space-bold';
+  src: url(./metadata/SpaceMonoNerdFontPropo-Bold.ttf);
+}
+
+:root {
+  --polarNight1: #2E3440;
+  --polarNight2: #3B4252;
+  --polarNight3: #434C5E;
+  --snowStorm1: #D8DEE9;
+  --snowStorm2: #E5E9F0;
+  --snowStorm3: #ECEFF4;
+  --text: rgb(205, 214, 244);
+}
+
+.background-blur {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.backdrop-shadow {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.0),
+                    0 22px 70px 4px rgba(0,0,0,0.12),
+                    0 0 0 1px rgba(0, 0, 0, 0.0);
+}
+
+.prevent-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* let page take full heigh of viewport excess */
+html { height: 100vh; } body { position: absolute; top:0; bottom:0; right:0; left:0; }
+
+body {
+  font-family: 'space';
+  font-size: 1rem;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  overflow: hidden;
+}
+
+#sidebar {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: var(--polarNight3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#sidebar div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10%;
+  cursor: pointer;
+}
+#sidebar div img {
+  width: 24px;
+}
+#sidebar div span {
+  font-family: 'space';
+  font-size: 1.1rem;
+  word-break: break-all;
+  color: var(--text);  
+}
+
+#sidebar div span:hover {
+  color: var(--snowStorm3);
+}
+#sidebar div span:active {
+  color: var(--text);
+}
+
+#dashboard {
+  margin-left: 0 !important;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  justify-content: center !important;
+}
+#dashboard img {
+  width: 36px !important;
+}
+#dashboard span { 
+  font-family: 'space-bold' !important;
+  font-size: 1.3rem !important;
+}
+
+#settings {
+  margin-top: 32px;
+}
+
+#primary {
+  grid-area: 1 / 2 / 2 / 6;
+  background-color: var(--polarNight1);
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+header {
+  width: 100%;
+  background-color: var(--polarNight2);
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+#primary-content {
+  grid-area: 2 / 1 / 7 / 2;
+}
