@@ -57,9 +57,191 @@
 
     <header class="backdrop-shadow">
 
+      <div id="search" class="search">
+        <img src="./metadata/icons/search-01-stroke-rounded.svg">
+        <input id="search-box" type="text" name="search">
+      </div>
+
+      <div class="mini-profile">
+        <img id="noti-on" class="notification" style="display: block;" src="./metadata/icons/notification-02-stroke-rounded.svg">
+        <img id="noti-off" class="notification" style="display: none;" src="./metadata/icons/notification-off-02-stroke-rounded.svg">
+        <img id="pfp-mini" src="./metadata/pfp.png">
+        <span id="username">Swyzsh</span>
+      </div>
+
+      <div class="profile">
+        <img id="pfp-big" src="./metadata/pfp.png">
+        <span class="welcome">Hi there,</span>
+        <span id="username">Swyzsh [<span id="userid">@swyzsh</span>]</span>
+      </div>
+
+      <div class="action">
+        <button id="new">New</button>
+        <button id="upload">Upload</button>
+        <button id="share">Share</button>
+      </div>
+
     </header>
 
     <div id="primary-content">
+
+      <div class="your-projects">
+        <span class="section-heading">Your Projects</span>
+
+        <div class="cards-wrapper">
+          <div class="card">
+            <div class="textarea">
+              <span class="card-heading">Super Cool Project</span>
+              <p class="card-content">Sed tempus ut lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</p>  
+            </div>
+            <div class="card-actions">
+              <img class="fav" src="./metadata/icons/star-stroke-rounded.svg">
+              <img class="watch" src="./metadata/icons/view-stroke-rounded.svg">
+              <img class="fork" src="./metadata/icons/git-fork-stroke-rounded.svg">
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="textarea">
+              <span class="card-heading">Less Cool Project</span>
+              <p class="card-content">Nullam condimentum ipsum ut lectus vehicula consectetur. Quisque sed dolor tincidunt, consectetur sapien et, facilisis dolor. Duis sem purus, dignissim ut sapien in, varius pellentesque lacus.</p>  
+            </div>
+            <div class="card-actions">
+              <img class="fav" src="./metadata/icons/star-stroke-rounded.svg">
+              <img class="watch" src="./metadata/icons/view-stroke-rounded.svg">
+              <img class="fork" src="./metadata/icons/git-fork-stroke-rounded.svg">
+            </div>
+          </div>
+  
+          <div class="card">
+            <div class="textarea">
+              <span class="card-heading">Impossible App</span>
+              <p class="card-content">In hac habitasse platea dictumst. Vivamus dictum rutrum arcu, a placerat velit sagittis id.</p>  
+            </div>
+            <div class="card-actions">
+              <img class="fav" src="./metadata/icons/star-stroke-rounded.svg">
+              <img class="watch" src="./metadata/icons/view-stroke-rounded.svg">
+              <img class="fork" src="./metadata/icons/git-fork-stroke-rounded.svg">
+            </div>
+          </div>
+  
+          <div class="card">
+            <div class="textarea">
+              <span class="card-heading">Easy Peasy App</span>
+              <p class="card-content">Etiam cursus eros ac efficitur fringilla. Vestibulum dignissim urna eget accumsan aliquam. Curabitur dignissim nisi in tortor commodo, ac bibendum magna tincidunt.</p>  
+            </div>
+            <div class="card-actions">
+              <img class="fav" src="./metadata/icons/star-stroke-rounded.svg">
+              <img class="watch" src="./metadata/icons/view-stroke-rounded.svg">
+              <img class="fork" src="./metadata/icons/git-fork-stroke-rounded.svg">
+            </div>
+          </div>
+  
+          <div class="card">
+            <div class="textarea">
+              <span class="card-heading">Ad Blocker</span>
+              <p class="card-content">Quisque eget rutrum nisl. Nam augue justo, cursus vitae metus vel, pharetra hendrerit felis. Aliquam sed malesuada eros.</p>  
+            </div>
+            <div class="card-actions">
+              <img class="fav" src="./metadata/icons/star-stroke-rounded.svg">
+              <img class="watch" src="./metadata/icons/view-stroke-rounded.svg">
+              <img class="fork" src="./metadata/icons/git-fork-stroke-rounded.svg">
+            </div>
+          </div>
+  
+          <div class="card">
+            <div class="textarea">
+              <span class="card-heading">Money Maker</span>
+              <p class="card-content">Present convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor purus sit amet ex. Pellentesque mollis nec sem vel aliquam.</p>  
+            </div>
+            <div class="card-actions">
+              <img class="fav" src="./metadata/icons/star-stroke-rounded.svg">
+              <img class="watch" src="./metadata/icons/view-stroke-rounded.svg">
+              <img class="fork" src="./metadata/icons/git-fork-stroke-rounded.svg">
+            </div>
+          </div>
+  
+          <div class="card">
+            <div class="textarea">
+              <span class="card-heading">Another One</span>
+              <p class="card-content">Per annum, the de facto modus operandi of the curriculum vitae preparation includes bona fide data, pro bono advice, and prima facie evidence of capabilities.</p>  
+            </div>
+            <div class="card-actions">
+              <img class="fav" src="./metadata/icons/star-stroke-rounded.svg">
+              <img class="watch" src="./metadata/icons/view-stroke-rounded.svg">
+              <img class="fork" src="./metadata/icons/git-fork-stroke-rounded.svg">
+            </div>
+          </div>
+  
+          <div class="card">
+            <div class="textarea">
+              <span class="card-heading">Yet Another One</span>
+              <p class="card-content">Ex officio, the company's status quo is maintained via ad hoc decisions, in situ assessments, and ex post facto analyses, ensuring a per capita benefit.</p>  
+            </div>
+            <div class="card-actions">
+              <img class="fav" src="./metadata/icons/star-stroke-rounded.svg">
+              <img class="watch" src="./metadata/icons/view-stroke-rounded.svg">
+              <img class="fork" src="./metadata/icons/git-fork-stroke-rounded.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="announcements">
+        <span class="section-heading">Announcements</span>
+
+        <div class="card">
+          <div>
+            <span class="card-heading">Site Maintenance</span>
+            <p class="card-content">Vestibulum condimentum tellus lacus, in accumsan elit maximus ac. Donec hendrerit sodales congue…</p>
+          </div>
+          <div class="spacer"></div>
+          <div>
+            <span class="card-heading">Community Share Day</span>
+            <p class="card-content">Nam vel lectus tincidunt, rutrum nulla eu, ornare libero. Aliquam dictum accumsan porttitor..</p>
+          </div>
+          <div class="spacer"></div>
+          <div>
+            <span class="card-heading">Updated Privacy Policy</span>
+            <p class="card-content">Phasellus efficitur nisi eget elit consectetur, eget condimentum ante auctor. Cras fringilla sagittis sem in mattis...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="trending">
+        <span class="section-heading">Trending</span>
+
+        <div class="card">
+          <div>
+            <img src="./metadata/trending/cat.jpg">
+            <div>
+              <span>@politeCat</span>
+              <p>World Peace Builder</p>
+            </div> 
+          </div>
+          <div>
+            <img src="./metadata/trending/ed5.png">
+            <div>
+              <span>@coughcat69</span>
+              <p>Super Cool Project</p>
+            </div>
+          </div>
+          <div>
+            <img src="./metadata/trending/2232636543_231cd9e0e1_o.jpg">
+            <div>
+              <span>@hover_cat</span>
+              <p>Life Changing Project</p>
+            </div>
+          </div>
+          <div>
+            <img src="./metadata/trending/Untitled-1.png">
+            <div>
+              <span>@cryingcat</span>
+              <p>No Traffic Maker</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
 
