@@ -1,14 +1,10 @@
 @font-face {
-    font-family: 'EB Garamond';
-    src: url(../metadata/EBGaramond-Regular.ttf);
-}
-@font-face {
     font-family: 'Jet Brains Mono';
-    src: url(../metadata/JetBrainsMono-Regular.ttf);
+    src: url('./metadata/JetBrainsMonoNerdFontMono-Regular.ttf');
 }
 
 :root {
-    --mantle: #181825;
+    --mantle: #1e2030;
     --crust: #11111b;
     --rosewater: #f5e0dc;
     --mauve: #cba6f7;
@@ -33,7 +29,7 @@ html {
 }
 
 body {
-    font-family: 'EB Garamond';
+    font-family: 'Jet Brains Mono';
     color: var(--text);
     background-color: var(--mantle);
     font-size: 1rem;
@@ -93,7 +89,7 @@ a:hover {
 }
 
 #index-wrapper {
-    font-family: 'EB Garamond';
+    font-family: 'Jet Brains Mono';
     display: flex;
     flex-direction: column;
     justify-content: space-around;
