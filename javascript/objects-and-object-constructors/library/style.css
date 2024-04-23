@@ -3,6 +3,136 @@
   src: url(./metadata/ashburylig.otf);
 }
 
+:root {
+  --base: #2E3440;
+  --text: #ECEFF4;
+}
+
+html {
+  height: 100%;
+}
 body {
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
   font-family: 'ashbury';
+  font-size: 1rem;
+  background-color: var(--base);
+  color: var(--text);
+}
+
+#library {
+  position: absolute;
+  margin-top: 32px;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 90%;
+  padding-bottom: 66px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#library span {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#library span img {
+  margin-top: -2.69px;
+  width: 34px;
+  height: 34px;
+}
+
+#book-container {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#book-container .heading {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--text);
+}
+#book-container .heading span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  width: 100%;
+}
+
+#book-container .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border-bottom: 1px solid var(--text);
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#book-container .grid div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+#book-container .grid div span {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.88rem;
+  word-break: keep-all;
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  background-color: var(--base);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer button {
+  width: 112px;
+  height: 32px;
+  font-family: 'ashbury';
+  font-size: 0.88rem;
+  background-color: var(--base);
+  color: var(--text);
+  border: 1px solid var(--text);
+  cursor: pointer;
+}
+footer button:hover {
+  background-color: var(--text);
+  color: var(--base);
+  border: 1px solid var(--text);
+}
+footer button:active {
+  background-color: var(--base);
+  color: var(--text);
+  border: 1px solid var(--text)
 }

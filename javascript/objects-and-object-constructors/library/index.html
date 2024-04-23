@@ -5,8 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/x-icon" href="./metadata/classical-building.png">
 </head>
 <body>
+
+  <div id="library">
+    <span>Library&nbsp;<img src="./metadata/classical-building.png"></span>
+    <div id="book-container">
+      <div class="heading">
+        <span>Title</span>
+        <span>Author</span>
+        <span>Pages</span>
+        <span>Status</span>
+      </div>
+      <div class="grid">
+        <div id="col-title"></div>
+        <div id="col-author"></div>
+        <div id="col-pages"></div>
+        <div id="col-status"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <button id="new-book">Add Book</button>
+    <button id="remove-book">Remove Book</button>
+  </footer>
   
   <script src="./app.js"></script>
 </body>
