@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'ashbury';
+  src: url(./metadata/ashburylig.otf);
+}
+
+body {
+  font-family: 'ashbury';
+}
