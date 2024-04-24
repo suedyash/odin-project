@@ -11,27 +11,15 @@ function Book(title, author, pages, readStatus) {
   this.readStatus = readStatus;
 }
 
-
-
-function addToBooksArray() {
-
-}
-
 // execute after DOM loads...
 document.addEventListener('DOMContentLoaded', function() {
-  // const newBookBtn = document.getElementById("new-book");
-  // const rmBookBtn = document.getElementById("remove-book");
-  
   const colTitle = document.getElementById("col-title");
   const colAuthor = document.getElementById("col-author");
   const colPages = document.getElementById("col-pages");
   const colStatus = document.getElementById("col-status");
 
-  let readStatus = "";
-
   function addToLibrary() {
     booksArray.forEach(book => {
-      
       const newTitle = document.createElement("span");
       newTitle.appendChild(document.createTextNode(book.title));
       colTitle.appendChild(newTitle);
@@ -49,43 +37,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // handle styling for Read Status
       const checkbox = document.createElement("input");
-      checkbox.setAttribute("type", "checkbox");
-      checkbox.classList.add("checkbox");
+      checkbox.type = "checkbox";
+      checkbox.checked = book.readStatus;
       newStatus.appendChild(checkbox);
-      if (book.readStatus == true) {
-        checkbox.checked = true;
-        readStatus = "read";
-        console.log(readStatus);
-      } else if (book.readStatus == false) {
-        checkbox.checked = false;
-        readStatus = "not read yet";
-        console.log(readStatus);
-      }
+      
+      checkbox.addEventListener('change', function() {
+        checkbox.checked ? book.readStatus = true : book.readStatus = false;
+      })
     });
   }
   addToLibrary();
 
-  // change read status depending on checkbox tick
-  const checkbox = document.querySelectorAll(".checkbox");
+  // add New books to Library
+  function addToBooksArray() {
 
-  /*
-  function handleReadStatus() {
-    checkbox.forEach(box => (addEventListener('click'), function() {
-      if (box.checked == true) {
-        box.checked = false;
-        readStatus = "not read yet";
-        console.log(readStatus);
-      } else if (box.checked == false) {
-        box.checked = true;
-        readStatus = "read";
-        console.log(readStatus);
-      }
-    }));
   }
-  handleReadStatus();
-  */
-
-
-  
-
 });
