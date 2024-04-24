@@ -8,6 +8,17 @@
   --text: #ECEFF4;
 }
 
+.background-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.backdrop-shadow {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.0),
+                    0 22px 70px 4px rgba(0,0,0,0.55),
+                    0 0 0 1px rgba(0, 0, 0, 0.0);
+}
+
 html {
   height: 100%;
 }
@@ -145,7 +156,6 @@ input[type="checkbox"]:focus {
   outline: max(2px, 2px) solid var(--base);
 }
 
-
 footer {
   position: fixed;
   bottom: 0;
@@ -176,4 +186,164 @@ footer button:active {
   background-color: var(--base);
   color: var(--text);
   border: 1px solid var(--text)
+}
+
+#form-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 52, 64, 0.5);
+}
+#form-container form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 272px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+#form-container label {
+  align-self: flex-start;
+  font-family: 'ashbury';
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+#form-container input {
+  align-self: flex-end;
+}
+input[type="text"], input[type="number"] {
+  background-color: var(--base);
+  border: 1.42px solid var(--text);
+  color: var(--text);
+  font-family: 'ashbury';
+  font-size: 0.88rem;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+  outline: none;
+}
+
+/* Remove Spinners from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#form-container form div {
+  margin-top: -8px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+}
+#form-container form div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+#form-container form div div input {
+  transform: translate(0, -4px);
+}
+
+#book-form .actionButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+#book-form button {
+  margin-top: 32px;
+  background-color: var(--base);
+  color: var(--text);
+  border: 1.42px solid var(--text);
+  font-family: 'ashbury';
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+#book-form button:hover {
+  background-color: var(--text);
+  color: var(--base);
+}
+#book-form button:active {
+  background-color: var(--base);
+  color: var(--text);
+}
+
+#removeBookContainer {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translate(-50%, 0); 
+  padding: 24px;
+  padding-bottom: 80px;
+  border: 1.42px solid var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+#removeBookContainer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+  gap: 16px;
+  color: var(--text);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-align: end;
+}
+#removeBookContainer .remove {
+  background-color: var(--base);
+  color: var(--text);
+  border: 1.42px solid var(--text);
+  font-family: 'ashbury';
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+#exitRemove {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 16px;
+  background-color: var(--base);
+  color: var(--text);
+  border: 1.42px solid var(--text);
+  font-family: 'ashbury';
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+#exitRemove:hover {
+  background-color: var(--text);
+  color: var(--base);
+}
+#exitRemove:active {
+  background-color: var(--base);
+  color: var(--text);
 }
