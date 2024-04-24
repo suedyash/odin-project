@@ -168,8 +168,10 @@ footer {
   align-items: center;
 }
 footer button {
-  width: 112px;
+  width: auto;
   height: 32px;
+  padding-left: 8px;
+  padding-right: 8px;
   font-family: 'ashbury';
   font-size: 0.88rem;
   background-color: var(--base);
