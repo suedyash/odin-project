@@ -18,16 +18,6 @@
   3. merge them together
 */
 
-function mergeSort(arr) {
-  if (arr.length == 1) {
-    return arr;
-  }
-  const  middle_arr = Math.floor(arr.length / 2);
-  const leftHalf_arr = arr.slice(0, middle_arr);  
-  const rightHalf_arr = arr.slice(middle_arr, arr.length);
-  return merge(mergeSort(leftHalf_arr), mergeSort(rightHalf_arr));
-}
-
 function merge(leftHalf, rightHalf) {
   const result = [];
 
@@ -38,11 +28,9 @@ function merge(leftHalf, rightHalf) {
       result.push(rightHalf.shift());
     }
   }
-
   while (leftHalf.length) {
     result.push(leftHalf.shift());
   }
-
   while (rightHalf.length) {
     result.push(rightHalf.shift());
   }
@@ -50,7 +38,19 @@ function merge(leftHalf, rightHalf) {
   return result;
 }
 
+function mergeSort(arr) {
+  if (arr.length == 1) {
+    return arr;
+  }
+  const  middle_arr = Math.floor(arr.length / 2);
+  const leftHalf_arr = arr.slice(0, middle_arr);  
+  const rightHalf_arr = arr.slice(middle_arr, arr.length);
+  return merge(mergeSort(leftHalf_arr), mergeSort(rightHalf_arr));
+}
+
 let input1 = [3, 2, 1, 13, 8, 5, 0, 1];
 console.log(`1. Unsorted: ${input1} | Sorted: ${mergeSort(input1)}`);
 let input2 = [105, 79, 100, 110];
-console.log(`1. Unsorted: ${input2} | Sorted: ${mergeSort(input2)}`);
+console.log(`2. Unsorted: ${input2} | Sorted: ${mergeSort(input2)}`);
+let input3 = [105, 79, 100, 110, 3, 2, 1, 13, 8, 5, 0];
+console.log(`3. Unsorted: ${input3} | Sorted: ${mergeSort(input3)}`);
