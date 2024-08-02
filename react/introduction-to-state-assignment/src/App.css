@@ -1,0 +1,22 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  width: calc(100% - 4em);
+  padding: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  border-radius: 8px;
+  margin-bottom: 2em;
+}
+
+.selected {
+  border: 2px solid white;
+}
