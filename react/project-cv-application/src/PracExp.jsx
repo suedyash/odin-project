@@ -2,7 +2,10 @@ function PracExp() {
 
   return(
     <>
-      <h3 className="sectionHeading">Work Experiences</h3>
+      <div className="sectionHeading">
+        <h3>WORK EXPERIENCES</h3>
+        <div className="underLine"></div>
+      </div>
     </>
   );
 }

@@ -1,0 +1,40 @@
+.personalDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.personalDetails .lh {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.personalDetails .rh {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.personalDetails .rh h4 {
+  line-height: 1;
+  margin: 4px;
+  text-align: end;
+}
+
+h1 {
+  margin: 0;
+  line-height: 0.8;
+  font-size: 6em;
+  text-transform: uppercase;
+  color: var(--color2);
+  white-space: wrap; 
+  word-break: keep-all;
+}
+
+h4 {
+  margin-left: 3em;
+  text-align: start;
+}

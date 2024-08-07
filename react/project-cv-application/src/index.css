@@ -1,11 +1,17 @@
+@font-face {
+  font-family: 'ashbury';
+  src: url('./assets/ashburylig.otf');
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'ashbury';
   line-height: 1.5;
   font-weight: 400;
+  letter-spacing: 1px;
 
   --color1: rgb(219, 219, 228);
-  --color2: rgb(186, 145, 76);
-  --background: rgb(19, 21, 33);
+  --color2: rgb(197, 144, 66);
+  --background: rgb(20, 22, 35);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,11 +20,16 @@
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  width: 100vw;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 3em;
+  margin-top: 0;
+  width: calc(100vw - 6em);
+  min-height: calc(100vh - 6em);
   color: var(--color1);
   background-color: var(--background);
 }
@@ -40,4 +51,21 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.sectionHeading {
+  width: 100%;
+  line-height: 0;
+  margin-top: 3em;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.sectionHeading .underLine {
+  margin-top: -6px;
+  margin-bottom: 3em;
+  background-color: var(--color1);
+  width: 100%;
+  height: 1px;
+  opacity: 0.5;
 }

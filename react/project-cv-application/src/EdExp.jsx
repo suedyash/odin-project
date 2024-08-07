@@ -2,7 +2,10 @@ function EdExp() {
 
   return(
     <>
-      <h3 className="sectionHeading">Educations</h3>
+      <div className="sectionHeading">
+        <h3>EDUCATIONS</h3>
+        <div className="underLine"></div>
+      </div>
     </>
   );
 }
