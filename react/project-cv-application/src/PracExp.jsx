@@ -1,3 +1,5 @@
+import './PracExp.css';
+
 function PracExp() {
 
   return(

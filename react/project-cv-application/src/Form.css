@@ -44,7 +44,7 @@ label textarea {
   cursor: text;
 }
 
-button[type="submit"] {
+button[type="submit"]:nth-child(1) {
   position: fixed;
   top: 3em;
   right: 3em;

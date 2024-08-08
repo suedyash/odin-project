@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'ashbury';
-  src: url('./assets/ashburylig.otf');
+  font-family: 'lovato';
+  src: url('./assets/Lovato-Light-webfont.woff2');
 }
 
 :root {
-  font-family: 'ashbury';
+  font-family: 'lovato';
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: 1px;
@@ -12,11 +12,6 @@
   --color1: rgb(219, 219, 228);
   --color2: rgb(197, 144, 66);
   --background: rgb(20, 22, 35);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {

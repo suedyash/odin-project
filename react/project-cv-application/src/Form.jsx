@@ -56,6 +56,19 @@ function Form({
         <span>Write something about yourself...</span>
         <textarea value={userIntro} onChange={handleInputChange(setUserIntro)} />
       </label>
+
+      <label className="workExp">
+        <span>Time to add some work experiences...</span>
+        <div className="workExpInput">
+            <input type="text" placeholder="Name of the Company" />
+            <input type="text" placeholder="Position" />
+            <input type="text" placeholder="Period" />
+        </div>
+        <button type="submit">Submit</button>
+        <div className="workExpHistory">
+
+        </div>
+      </label>
     </div>
   );
 }
