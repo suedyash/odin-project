@@ -1,0 +1,9 @@
+label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+
+  font-size: 1.25em;
+}
