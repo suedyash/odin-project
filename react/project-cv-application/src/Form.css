@@ -1,9 +1,51 @@
-label {
-  display: flex;
-  flex-direction: row;
+#form {
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
+}
 
+label {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
   font-size: 1.25em;
+  text-align: start;
+}
+label span {
+  align-self: flex-start;
+}
+label input {
+  width: calc(100% - 1.2em);
+  align-self: flex-end;
+  cursor: text;
+  text-align: end;
+}
+
+label:nth-child(4) {
+  margin-bottom: -1em;
+}
+label:nth-child(5) {
+  margin-bottom: -1em;
+}
+
+.userLinks h6{
+  margin: 0;
+}
+
+label textarea {
+  width: 100%;
+  height: 160px;
+  text-align: start;
+  resize: none;
+  cursor: text;
+}
+
+button[type="submit"] {
+  position: fixed;
+  top: 3em;
+  right: 3em;
 }

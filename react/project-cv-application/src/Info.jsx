@@ -5,7 +5,9 @@ function Info(
     userName, 
     userIntro,
     userMail,
-    userAddress,
+    userAddress1,
+    userAddress2,
+    userAddress3,
     userLinks
   }) {
 
@@ -23,7 +25,7 @@ function Info(
         </div>
         <div className='rh'>
           <h4>{userMail}</h4>
-          <h4>{userAddress}</h4>
+          <h4>{userAddress1}<br />{userAddress2}<br />{userAddress3}</h4>
           {userLinks.map((link, index) => (
           <h4 key={index}>{link}</h4>
           ))} 

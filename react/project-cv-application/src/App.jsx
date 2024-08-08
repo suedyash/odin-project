@@ -7,11 +7,19 @@ import EdExp from "./EdExp.jsx";
 import Form from "./Form.jsx";
 
 function App() {
+  const [editMode, setEditMode] = useState(false);
+
   const [userName, setUserName] = useState("Full Name");
-  const [userIntro, setUserIntro] = useState("Write a short introduction of yourself here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
   const [userMail, setUserMail] = useState("Email Address");
-  const [userAddress, setUserAddress] = useState("Residential Address");
+  const [userAddress1, setUserAddress1] = useState("Flat Number, Street Name");
+  const [userAddress2, setUserAddress2] = useState("District, City");
+  const [userAddress3, setUserAddress3] = useState("State, 110016");
+  const [userIntro, setUserIntro] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
   const [userLinks, setUserLinks] = useState([]);
+
+  function toggleEdit() {
+    setEditMode(!editMode);
+  }
 
   function savePDF() {
     let fileName = userName.toLowerCase().replace(/\s+/g, '');
@@ -49,22 +57,40 @@ function App() {
 
   return (
     <>
-      <div className="userActions">
-        <button>Edit Details</button>
-        <button onClick={savePDF}>
-          Download
-        </button>
-      </div>
-      <Info 
-        userName={userName}
-        userIntro={userIntro}
-        userMail={userMail}
-        userAddress={userAddress}
-        userLinks={userLinks}
+      
+      { !editMode && (
+        <>
+          <div className="userActions">
+            <button onClick={toggleEdit}>
+              Edit Details
+            </button>
+            <button onClick={savePDF}>
+              Download
+            </button>
+          </div>
+          <Info 
+            userName={userName}
+            userIntro={userIntro}
+            userMail={userMail}
+            userAddress1={userAddress1}
+            userAddress2={userAddress2}
+            userAddress3={userAddress3}
+            userLinks={userLinks}
+          />
+          <PracExp />
+          <EdExp />
+        </>
+      )} 
+      <Form 
+        editMode={editMode} setEditMode={setEditMode}
+        userName={userName} setUserName={setUserName}
+        userMail={userMail} setUserMail={setUserMail}
+        userAddress1={userAddress1} setUserAddress1={setUserAddress1}
+        userAddress2={userAddress2} setUserAddress2={setUserAddress2}
+        userAddress3={userAddress3} setUserAddress3={setUserAddress3}
+        userLinks={userLinks} setUserLinks={setUserLinks} 
+        userIntro={userIntro} setUserIntro={setUserIntro}
       />
-      <PracExp />
-      <EdExp />
-      <Form />
     </>
   );
 }
