@@ -56,10 +56,6 @@ input {
   font-family: inherit;
   background-color: var(--background);
   color: var(--color1);
-  transition: border-color 0.25s;
-}
-input:hover {
-  border-color: var(--color2);
 }
 input:focus,
 input:focus-visible {
