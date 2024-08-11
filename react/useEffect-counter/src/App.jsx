@@ -13,7 +13,9 @@ function App() {
     };
   }, []);
 
-  return <p>{counter} seconds have passed.</p>;
+  return (
+    <p>{counter} seconds have passed.</p>
+  );
 }
 
 export default App;
