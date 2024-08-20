@@ -1,7 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Cards() {
   const [gridSize, setGridSize] = useState(2);
+  const [pokemons, setPokemons] = useState([]);  
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchPokemons() {
+      try {
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=1025');
+        const data = await response.json();
+        setPokemons(data.results);
+      } 
+      catch (error) {
+        console.error('Error fetching from Pokemon API:', error);
+      }
+      finally {
+        setLoading(false);
+      }
+    }
+
+    fetchPokemons();
+  }, []);
+
+  console.log(pokemons);
 
   function handleGridChange(size) {
     setGridSize((prevGridSize) => prevGridSize = size);
@@ -13,7 +35,8 @@ function Cards() {
     return Array.from({ length: totalElements }).map((_, index) => (
       <div key={index} className="grid-element">
         <div>
-          
+          <img src="" alt={loading === true ? "Loading..." : "Poke Card"} />
+          <h4></h4>
         </div>
       </div>
     ));
