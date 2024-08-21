@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function Cards() {
-  const [gridSize, setGridSize] = useState(2);
+  const [gridSize, setGridSize] = useState(4);
   const [pokemons, setPokemons] = useState([]);  
   const [loading, setLoading] = useState(true);
 

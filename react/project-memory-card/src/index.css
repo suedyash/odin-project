@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'poke-solid';
+  src: url('./assets/PokemonSolidNormal-xyWR.ttf');
+}
+
+@font-face {
+  font-family: 'pixel-reg';
+  src: url('./assets/EightBitDragon-anqx.ttf');
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -34,6 +44,9 @@ body {
   min-height: 100vh;
   color: var(--text);
   background-color: var(--bg);
+  font-family: 'pixel-reg';
+  font-size: 1em;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -42,7 +55,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.4em;
+  font-size: 2.2em;
   margin: 0;
 }
 
@@ -61,6 +74,7 @@ button {
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
+  letter-spacing: 1px;
   font-weight: 500;
   font-family: inherit;
   color: var(--fg);
@@ -90,7 +104,12 @@ button:focus-visible {
   align-items: center;
   gap: 1em;
   background-color: var(--text);
-  color: var(--fg);
+  color: var(--fg2);
+}
+
+.header h3 {
+  font-family: 'poke-solid';
+  letter-spacing: 1px;
 }
 
 .scoreboard {
@@ -99,7 +118,7 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   gap: 4em;
-  padding: 0.5em;
+  padding: 0.6em;
   background-color: var(--fg2);
   color: var(--text);
 }
@@ -112,16 +131,18 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   gap: 1em;
-  padding: 0.4em;
+  padding: 0.6em;
 }
 .grid-selector button {
-  padding: 0.1em;
+  padding: 0.2em;
 }
 
 .cards-container {
-  margin: 2em;
-  grid-column-gap: 8px;
-  grid-row-gap: 8px;
+  margin: 1em;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  padding-bottom: 2.5em;
+  overflow: hidden;
 }
 
 .grid-element {
@@ -129,7 +150,8 @@ button:focus-visible {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid var(--text);
+  gap: 4px;
+  padding: 8px;
   background-color: var(--surface);
   cursor: pointer;
 }
@@ -143,6 +165,7 @@ button:focus-visible {
 }
 .grid-element h4 {
   text-transform: uppercase;
+  text-align: center;
 }
 
 
@@ -151,7 +174,7 @@ button:focus-visible {
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: 0.5em;
+  padding: 0.6em;
   width: calc(100% - 1em);
   background-color: var(--text);
   color: var(--fg);
@@ -180,4 +203,39 @@ button:focus-visible {
 .footer button:focus,
 .footer button:focus-visible {
   outline: 1px auto -webkit-focus-ring-color;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    min-width: 100vw;
+    min-height: 100vh;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  .grid-selector {
+    text-align: center;
+  }
+  .grid-selector button {
+    padding: 0.4em;
+  }
+  
+  .cards-container {
+    margin: 0.5em;
+    overflow: scroll;
+  }
+  
+  .grid-element {
+    gap: 4px;
+    padding: 4px;
+  }
+  .grid-element img {
+    width: 64px;
+  }
+  .grid-element h4 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.69em;
+  }
 }
