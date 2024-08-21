@@ -51,6 +51,11 @@ h3 {
   margin: 0;
 }
 
+h4 {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
 button {
   border-radius: 4px;
   border: 1px solid transparent;
@@ -119,13 +124,25 @@ button:focus-visible {
   grid-row-gap: 8px;
 }
 
-.cards-container div {
+.grid-element {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--text);
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--text);
+  background-color: var(--surface);
+  cursor: pointer;
 }
-.cards-container div img {
-  width: 100%;
+.grid-element:hover {
+  background-color: var(--text);
+  color: var(--fg);
+}
+
+.grid-element img {
+  width: 96px;
+}
+.grid-element h4 {
+  text-transform: uppercase;
 }
 
 

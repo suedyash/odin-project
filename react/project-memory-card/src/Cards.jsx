@@ -10,7 +10,15 @@ function Cards() {
       try {
         const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=1025');
         const data = await response.json();
-        setPokemons(data.results);
+
+        const detailedPokemons = await Promise.all(
+          data.results.map(async (pokemon) => {
+            const pokemonDetailsResponse = await fetch(pokemon.url);
+            return await pokemonDetailsResponse.json();
+          })
+        );
+
+        setPokemons(detailedPokemons);
       } 
       catch (error) {
         console.error('Error fetching from Pokemon API:', error);
@@ -23,8 +31,6 @@ function Cards() {
     fetchPokemons();
   }, []);
 
-  console.log(pokemons);
-
   function handleGridChange(size) {
     setGridSize((prevGridSize) => prevGridSize = size);
   } 
@@ -32,14 +38,24 @@ function Cards() {
   function createGridElements() {
     const totalElements = gridSize * gridSize;
 
-    return Array.from({ length: totalElements }).map((_, index) => (
-      <div key={index} className="grid-element">
-        <div>
-          <img src="" alt={loading === true ? "Loading..." : "Poke Card"} />
-          <h4></h4>
+    const selectedPokemons = pokemons.sort(() => 0.5 - Math.random()).slice(0, totalElements);
+
+    if (loading) {
+      return (
+        <div className="loading-text">
+          <span>Loading...</span>
         </div>
-      </div>
-    ));
+      );
+    } else {
+      return selectedPokemons.map((pokemon, index) => {
+        return (
+          <div key={index} className="grid-element">
+            <img src={pokemon.sprites.front_default} alt="Poke Card" />
+            <h4>{pokemon.name}</h4>
+          </div>
+        );
+      });
+    }
   }
 
   return (
