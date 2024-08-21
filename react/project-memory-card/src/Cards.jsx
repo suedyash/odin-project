@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Cards() {
+function Cards({ onClick }) {
   const [gridSize, setGridSize] = useState(4);
   const [pokemons, setPokemons] = useState([]);  
   const [loading, setLoading] = useState(true);
@@ -49,7 +49,11 @@ function Cards() {
     } else {
       return selectedPokemons.map((pokemon, index) => {
         return (
-          <div key={index} className="grid-element">
+          <div 
+            key={index} 
+            className="grid-element"
+            onClick={onClick}
+          >
             <img src={pokemon.sprites.front_default} alt="Poke Card" />
             <h4>{pokemon.name}</h4>
           </div>

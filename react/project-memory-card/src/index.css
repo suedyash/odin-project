@@ -146,6 +146,7 @@ button:focus-visible {
 }
 
 .grid-element {
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
