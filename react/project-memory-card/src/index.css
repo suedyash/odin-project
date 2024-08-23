@@ -161,6 +161,10 @@ button:focus-visible {
   background-color: var(--text);
   color: var(--fg);
 }
+.grid-element:active {
+  background-color: var(--surface);
+  color: white;
+}
 
 .grid-element img {
   width: 96px;
@@ -205,6 +209,13 @@ button:focus-visible {
 .footer button:focus,
 .footer button:focus-visible {
   outline: 1px auto -webkit-focus-ring-color;
+}
+
+@media (hover: none) {
+  .grid-element:hover {
+    background-color: var(--surface);
+    color: white;
+  } 
 }
 
 @media screen and (max-width: 992px) {
