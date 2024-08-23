@@ -154,6 +154,7 @@ button:focus-visible {
   gap: 4px;
   padding: 8px;
   background-color: var(--surface);
+  color: white;
   cursor: pointer;
 }
 .grid-element:hover {

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 
 function Scoreboard({ score, highScore }) {
   return (
@@ -9,12 +9,15 @@ function Scoreboard({ score, highScore }) {
   );
 }
 
-function Cards({  }) {
+function Cards() {
   const [gridSize, setGridSize] = useState(4);
   const [pokemons, setPokemons] = useState([]);  
+  const displayedPokemonsRef = useRef([]);
+  const selectedPokemonsRef = useRef([]);
   const [loading, setLoading] = useState(true);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const highScoreRef = useRef(0);
 
   useEffect(() => {
     async function fetchPokemons() {
@@ -46,12 +49,23 @@ function Cards({  }) {
     setGridSize((prevGridSize) => prevGridSize = size);
   }, []);
 
-  const handleScoreChange = useCallback(() => {
-    setScore((prevScore) => {
-      const newScore = prevScore + 1;
-      setHighScore((prevHighScore) => Math.max(prevHighScore, newScore));     
-      return newScore;
-    });
+  const handleCardClick = useCallback((pokemon) => {
+    if (selectedPokemonsRef.current.includes(pokemon)) {
+      selectedPokemonsRef.current = [];
+      setScore(0);
+      setHighScore(highScoreRef.current);
+
+    } else {
+      selectedPokemonsRef.current.push(pokemon);
+      console.log(selectedPokemonsRef.current);
+
+      setScore((prevScore) => {
+        const newScore = prevScore + 1;
+        highScoreRef.current = Math.max(prevScore, newScore);
+
+        return newScore;
+      });
+    }
   }, []); 
 
   const createGridElements = useMemo(() => {
@@ -63,15 +77,17 @@ function Cards({  }) {
       );
     }
 
-    const totalElements = gridSize * gridSize;
-    const selectedPokemons = pokemons.sort(() => 0.5 - Math.random()).slice(0, totalElements);
+    const initialGridElements = pokemons.sort(() => 0.5 - Math.random()).slice(0, gridSize * gridSize);
+    displayedPokemonsRef.current = [];
 
-    return selectedPokemons.map((pokemon, index) => {
+    return initialGridElements.map((pokemon, index) => {
+      displayedPokemonsRef.current.push(pokemon); 
+
       return (
         <div 
           key={index} 
           className="grid-element"
-          onClick={handleScoreChange}
+          onClick={() => handleCardClick(pokemon)}
         >
           <img src={pokemon.sprites.front_default} alt="Poke Card" />
           <h4>{pokemon.name}</h4>
