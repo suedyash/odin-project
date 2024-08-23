@@ -17,6 +17,7 @@ function Cards() {
   const [loading, setLoading] = useState(true);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const lastScoreRef = useRef(0);
   const highScoreRef = useRef(0);
 
   useEffect(() => {
@@ -46,25 +47,32 @@ function Cards() {
   }, [gridSize]);
 
   const handleGridChange = useCallback((size) => {
+    setScore(0);
     setGridSize((prevGridSize) => prevGridSize = size);
   }, []);
 
   const handleCardClick = useCallback((pokemon) => {
     if (selectedPokemonsRef.current.includes(pokemon)) {
       selectedPokemonsRef.current = [];
+      
+      if (lastScoreRef.current > highScoreRef.current) {
+        setHighScore(lastScoreRef.current);
+        highScoreRef.current = lastScoreRef.current;
+      }
       setScore(0);
-      setHighScore(highScoreRef.current);
+      lastScoreRef.current = 0;
 
     } else {
       selectedPokemonsRef.current.push(pokemon);
-      console.log(selectedPokemonsRef.current);
 
       setScore((prevScore) => {
         const newScore = prevScore + 1;
-        highScoreRef.current = Math.max(prevScore, newScore);
+        lastScoreRef.current = newScore;
 
         return newScore;
       });
+
+      setPokemons(displayedPokemonsRef.current);
     }
   }, []); 
 
@@ -77,10 +85,10 @@ function Cards() {
       );
     }
 
-    const initialGridElements = pokemons.sort(() => 0.5 - Math.random()).slice(0, gridSize * gridSize);
+    const gridElements = pokemons.sort(() => 0.5 - Math.random()).slice(0, gridSize * gridSize);
     displayedPokemonsRef.current = [];
 
-    return initialGridElements.map((pokemon, index) => {
+    return gridElements.map((pokemon, index) => {
       displayedPokemonsRef.current.push(pokemon); 
 
       return (
