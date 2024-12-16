@@ -1,20 +1,22 @@
-import { TreeNode, Tree } from "./tree";
-
-const prettyPrint = (node: TreeNode | null, prefix = "", isLeft = true) => {
-  if (node === null) {
-    return;
-  }
-  if (node.right !== null) {
-    prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false);
-  }
-  console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.data}`);
-  if (node.left !== null) {
-    prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
-  }
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tree_1 = require("./tree");
+var prettyPrint = function (node, prefix, isLeft) {
+    if (prefix === void 0) { prefix = ""; }
+    if (isLeft === void 0) { isLeft = true; }
+    if (node === null) {
+        return;
+    }
+    if (node.right !== null) {
+        prettyPrint(node.right, "".concat(prefix).concat(isLeft ? "│   " : "    "), false);
+    }
+    console.log("".concat(prefix).concat(isLeft ? "└── " : "┌── ").concat(node.data));
+    if (node.left !== null) {
+        prettyPrint(node.left, "".concat(prefix).concat(isLeft ? "    " : "│   "), true);
+    }
 };
-
-const bst = new Tree();
-const testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+var bst = new tree_1.Tree();
+var testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 // const testArr = [5, 10, 15, 7, 3];
 // const testArr = [10, 5, 15, 3, 7];
 bst.insertArr(testArr);
