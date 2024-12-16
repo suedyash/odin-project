@@ -11,12 +11,36 @@ class TreeNode {
 }
 
 export class Tree {
-  constructor(arr: number[]) {
-    this.root = this.buildTree(arr);
+  root: TreeNode | null;
+  left: TreeNode | null;
+  right: TreeNode | null;
+
+  constructor() {
+    this.root = null;
   }
 
-  buildTree(arr: number[]) {}
+  insertNode(rootNode: TreeNode, newNode: TreeNode) {
+    if (newNode.data < rootNode.data) {
+      rootNode.left = newNode;
+    }
+  }
+
+  isEmpty() {
+    return this.root === null;
+  }
+
+  insert(value: number) {
+    const newNode = new TreeNode(value);
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
 }
+
+const bst = new Tree();
+console.log("Tree empty?", bst.isEmpty());
 
 // TODO: Sort & Remove duplicated
 // TODO: insert(value) & delete(value) func using tree traversal
